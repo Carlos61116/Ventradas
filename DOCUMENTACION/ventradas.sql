@@ -66,6 +66,7 @@ CREATE TABLE IF NOT EXISTS `ventradas`.`concert` (
   `city` VARCHAR(45) NOT NULL,
   `amount_tickets` INT(11) NULL DEFAULT NULL,
   `src` varchar(700) null,
+  `date` date not null,
   `id_band` INT(11) NOT NULL,
   PRIMARY KEY (`id_concert`),
   INDEX `fk_concert_band_idx` (`id_concert` ASC),
@@ -437,7 +438,7 @@ insert into user (iduser, username, password, first_name, last_name, city, favor
 insert into user (iduser, username, password, first_name, last_name, city, favorite_band) values (298, 'cedmans89', 'UVtEbI3WDfo', 'Cori', 'Edmans', 'Tebingtinggi', false);
 insert into user (iduser, username, password, first_name, last_name, city, favorite_band) values (299, 'nsolan8a', 'WMSKJxRzAnH9', 'Nessi', 'Solan', 'Akunk’', true);
 insert into user (iduser, username, password, first_name, last_name, city, favorite_band) values (300, 'mstrainge8b', 'm1eUl7bR', 'Monika', 'Strainge', 'Puerto Santander', true);
-
+insert into user (iduser, username, password, first_name, last_name, city, favorite_band) values (0, 'admin', 'admin', 'admin', 'admin', 'admin', 'admin');
 
 insert into band VALUES(null,"Queen","La mejor banda de rock","","Rock");
 
@@ -450,22 +451,12 @@ insert into band Values(null,"Duki","El máximo exponente del trap argentino","D
 insert into band Values(null,"Malú","Cantante de pop español","Malú","Pop");
 
 
-insert into concert values(null,"God Save The Queen","Marbella",200,"https://i.imgur.com/BRSY8Dk.jpg",1);
+INSERT INTO `ventradas`.`concert` (`id_concert`, `concert_name`, `city`, `amount_tickets`, `src`, `date`, `id_band`) VALUES (null, 'God Save The Queen', 'Marbella', '200', 'https://i.imgur.com/BRSY8Dk.jpg', '2019-6-3', '1');
+INSERT INTO `ventradas`.`concert` (`id_concert`, `concert_name`, `city`, `amount_tickets`, `src`, `date`, `id_band`) VALUES (null, 'Hijo de la noche', 'Murcia', '50', 'https://i.imgur.com/b1PNdJ3.jpg', '2019-6-30', '4');
+INSERT INTO `ventradas`.`concert` (`id_concert`, `concert_name`, `city`, `amount_tickets`, `src`, `date`, `id_band`) VALUES (null, 'Oxigeno tour', 'Sevilla', '200', 'https://i.imgur.com/SbBm9l9.png', '2019-5-23', '5');
 
-insert into concert values(null,"Hijo de la noche","Murcia",50,"https://i.imgur.com/b1PNdJ3.jpg",4);
-
-insert into concert values(null,"Oxigeno tour","Sevilla",200,'https://i.imgur.com/SbBm9l9.png',5);
-
--- insert into concert values(null,"Hijo de la noche","Murcia",50,2324);
 insert into tickets values(null,"10","1");
 
- insert into tickets values(null,"30","2");
+insert into tickets values(null,"30","2");
 
 insert into tickets values(null,"5","3");
-
-
-
-
-
--- drop schema ventradas;
-
